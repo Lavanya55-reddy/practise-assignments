@@ -1,0 +1,46 @@
+shell String Operators:
+
+str="banana"
+if [[ $str = "banana" ]]
+then 
+    echo "same"
+else
+    echo "not"
+fi
+
+if [[ $str != "banana" ]]
+then 
+    echo "same"
+else
+    echo "not"
+fi
+
+if [[ -z $str ]]
+then 
+    echo "zero length"
+else
+    echo "nonzero length"
+fi
+
+if [[ -n $str ]]
+then 
+    echo "non-zero length"
+else
+    echo "zero length"
+fi
+
+if [[ $str ]]
+then 
+    echo "not empty string"
+else
+    echo "empty string"
+fi
+
+
+
+results:
+same
+not
+nonzero length
+non-zero length
+not empty string

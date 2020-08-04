@@ -1,0 +1,22 @@
+shell Boolean Operators:
+
+a=30
+b=10
+if [ $a -lt 50 -o $b -gt 100 ]
+then 
+    echo "true"
+else
+    echo "false"
+fi
+
+if [ $a -lt 50 -a $b -gt 100 ]
+then 
+    echo "true"
+else
+    echo "false"
+fi
+
+
+results:
+true
+false

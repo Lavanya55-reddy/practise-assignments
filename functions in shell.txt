@@ -1,0 +1,43 @@
+shell functions:
+
+1)hello(){
+    echo "hi this lavanya"
+}
+hello
+
+o/p:hi this lavanya
+
+2)celebrity(){
+    echo "my favourite hero: $1"
+    echo "cricker : $2"
+}
+celebrity nani sachin
+
+o/p:my favourite hero: nani
+    cricker : sachin
+
+3)celebrity(){
+    echo "my favourite hero is mahesh"
+    role
+}
+role(){
+    echo "software engineer"
+}
+celebrity
+
+o/p:
+my favourite hero is mahesh
+software engineer
+
+4)celebrity(){
+    echo "my favourite hero is $1"
+    role associate
+}
+role(){
+    echo "$1 software engineer"
+}
+celebrity nani
+
+o/p:
+my favourite hero is nani
+associate software engineer

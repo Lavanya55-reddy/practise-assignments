@@ -1,0 +1,56 @@
+shell Relational Operators:
+
+
+#!/bin/sh
+a=30
+b=10
+if [[ $a -eq $b ]]
+then 
+    echo "equal"
+else
+    echo "not equal"
+fi
+
+if [[ $a -ne $b ]]
+then 
+    echo "equal"
+else
+    echo "not equal"
+fi
+
+if [[ $a -gt $b ]]
+then 
+    echo "greater"
+else
+    echo "not greater"
+fi
+
+if [[ $b -lt $a ]]
+then 
+    echo "lesser"
+else
+    echo "not lesser"
+fi
+c=30
+if [[ $a -ge $c ]]
+then 
+    echo " greater equal"
+else
+    echo "not equal"
+fi
+
+if [[ $a -le $c ]]
+then 
+    echo " lesser equal"
+else
+    echo "not equal"
+fi
+
+
+results:
+not equal
+equal
+greater
+lesser
+ greater equal
+ lesser equal

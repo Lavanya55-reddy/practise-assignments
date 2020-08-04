@@ -1,0 +1,33 @@
+shell Arithmetic Operators:
+
+#!/bin/sh
+
+val=`expr 2 + 2`
+echo "Total value : $val"
+a=30
+b=10
+n=`expr $a + $b`
+echo $n
+n=`expr $a - $b`
+echo $n
+n=`expr $a \* $b`
+echo $n
+n=`expr $a / $b`
+echo $n
+n=`expr $a % $b`
+echo $n
+n=`expr $a == $b`
+echo $n
+n=`expr $a != $b`
+echo $n
+
+
+result:
+Total value : 4
+40
+20
+300
+3
+0
+0
+1
