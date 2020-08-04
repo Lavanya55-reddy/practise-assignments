@@ -1,0 +1,114 @@
+python:
+
+1)work on different variables and types of differnent datatypes in python
+
+>>> a=30
+>>> print(type(a))
+<class 'int'>
+>>> b=30.0
+>>> print(type(b))
+<class 'float'>
+>>> c=30.00000
+>>> print(type(c))
+<class 'float'>
+>>> c=3+4j
+>>> print(type(c))
+<class 'complex'>
+>>> a="true"
+>>> print(type(a))
+<class 'str'>
+ a=True
+>>> print(type(a))
+<class 'bool'>
+
+
+
+2)work on string concatination
+
+>>> name="lavanya"
+>>> training="azure cloud"
+>>> print(name+training)
+lavanyaazure cloud
+>>> name="lavanya"
+>>> age=21
+>>> print(name+age)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: can only concatenate str (not "int") to str
+>>>
+
+
+3)write a program of simple calculator using dynamic input
+
+>>>a=int("enter number1")
+b=int("enter number2")
+operator=int("enter operator")
+if operator=='+':
+...     print(a+b)
+elif operator=='-':
+...	print(a-b)
+elif operator=='*':
+...	print(a*b)
+elif operator=='/':
+...	print(a/b)
+else
+...	print("invalid operator")
+
+>>>enter number1 20
+enter number2 30
+enter operator +
+50
+
+
+
+
+4)string functions in python
+
+>>> name="lavanya"
+>>> print(name.capitalize())
+Lavanya
+>>> print(name.casefold())
+lavanya
+>>> print(name.center(20))
+      lavanya
+>>> print(name.count("a"))
+3
+>>> print(name.encode())
+b'lavanya'
+>>> print(name.isupper())
+False
+>>> print(name.islower())
+True
+>>>print(name.index("a"))
+1
+>>> print("$".join(name))
+l$a$v$a$n$y$a
+>>> print(name.upper())
+LAVANYA
+>>> name="SAI"
+>>> print(name.lower())
+sai
+>>> message="hi this is lavanya"
+>>> print(message.split())
+['hi', 'this', 'is', 'lavanya']
+>>> name="       hello      "
+>>> print(name.lstrip())
+hello
+>>> name="       hello      "
+>>> print(name.rstrip())
+       hello
+
+
+5)functions in python
+
+ A function is a block of code which only runs when it is called
+
+>>> def myfunction(name):
+...     print("my ame is "+name)
+>>> myfunction("lavanya")
+my ame is lavanya
+
+
+
+
+

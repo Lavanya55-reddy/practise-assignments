@@ -1,0 +1,1052 @@
+windows powershell:
+
+
+1)run a script and demonstrate adding two integers and then convert to hexadeciaml
+
+PS C:\WINDOWS\system32> $num1=120                  
+PS C:\WINDOWS\system32> $num2=255
+PS C:\WINDOWS\system32> $result=$num1+$num2
+PS C:\WINDOWS\system32> $result                                                           
+375
+PS C:\WINDOWS\system32> [int]"0x$result"
+885
+
+
+
+2)run a script and demonstrate if elseif condition
+
+
+PS C:\WINDOWS\system32> $num1=225       
+PS C:\WINDOWS\system32> if( $num1 -eq 225) {"num1 is equal to 225"}                                                     
+num1 is equal to 225
+PS C:\WINDOWS\system32> if( $num1 -ge 225) {"if block executed"} elseif($num1 -le 300) {"else block executes"} 
+if block executed
+PS C:\WINDOWS\system32> if( $num1 -gt 225) {"if block executed"} elseif($num1 -lt 300) {"else block executes"}         
+else block executes
+
+
+3)run a script and documents about commands like get-coomand,get-update,get-unique,get-date,write-host,get-process,get-alias
+
+
+
+Get-command:
+
+PS C:\WINDOWS\system32> Get-date
+28 July 2020 20:16:45
+
+
+PS C:\WINDOWS\system32> Get-Alias
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Alias           % -> ForEach-Object
+Alias           ? -> Where-Object
+Alias           ac -> Add-Content
+Alias           asnp -> Add-PSSnapin
+Alias           cat -> Get-Content
+Alias           cd -> Set-Location
+Alias           CFS -> ConvertFrom-String                          3.1.0.0    Microsoft.PowerShell.Utility
+Alias           chdir -> Set-Location
+Alias           clc -> Clear-Content
+Alias           clear -> Clear-Host
+Alias           clhy -> Clear-History
+Alias           cli -> Clear-Item
+Alias           clp -> Clear-ItemProperty
+Alias           cls -> Clear-Host
+Alias           clv -> Clear-Variable
+Alias           cnsn -> Connect-PSSession
+Alias           compare -> Compare-Object
+Alias           copy -> Copy-Item
+Alias           cp -> Copy-Item
+Alias           cpi -> Copy-Item
+Alias           cpp -> Copy-ItemProperty
+Alias           curl -> Invoke-WebRequest
+Alias           cvpa -> Convert-Path
+Alias           dbp -> Disable-PSBreakpoint
+Alias           del -> Remove-Item
+Alias           diff -> Compare-Object
+Alias           dir -> Get-ChildItem
+Alias           dnsn -> Disconnect-PSSession
+Alias           ebp -> Enable-PSBreakpoint
+Alias           echo -> Write-Output
+Alias           epal -> Export-Alias
+Alias           epcsv -> Export-Csv
+Alias           epsn -> Export-PSSession
+Alias           erase -> Remove-Item
+Alias           etsn -> Enter-PSSession
+Alias           exsn -> Exit-PSSession
+Alias           fc -> Format-Custom
+Alias           fhx -> Format-Hex                                  3.1.0.0    Microsoft.PowerShell.Utility
+Alias           fl -> Format-List
+Alias           foreach -> ForEach-Object
+Alias           ft -> Format-Table
+Alias           fw -> Format-Wide
+Alias           gal -> Get-Alias
+Alias           gbp -> Get-PSBreakpoint
+Alias           gc -> Get-Content
+Alias           gci -> Get-ChildItem
+Alias           gcm -> Get-Command
+Alias           gcs -> Get-PSCallStack
+Alias           gdr -> Get-PSDrive
+Alias           ghy -> Get-History
+Alias           gi -> Get-Item
+Alias           gjb -> Get-Job
+Alias           gl -> Get-Location
+Alias           gm -> Get-Member
+Alias           gmo -> Get-Module
+Alias           gp -> Get-ItemProperty
+Alias           gps -> Get-Process
+Alias           gpv -> Get-ItemPropertyValue
+Alias           group -> Group-Object
+Alias           gsn -> Get-PSSession
+Alias           gsnp -> Get-PSSnapin
+Alias           gsv -> Get-Service
+Alias           gu -> Get-Unique
+Alias           gv -> Get-Variable
+Alias           gwmi -> Get-WmiObject
+Alias           h -> Get-History
+Alias           history -> Get-History
+Alias           icm -> Invoke-Command
+Alias           iex -> Invoke-Expression
+Alias           ihy -> Invoke-History
+Alias           ii -> Invoke-Item
+Alias           ipal -> Import-Alias
+Alias           ipcsv -> Import-Csv
+Alias           ipmo -> Import-Module
+Alias           ipsn -> Import-PSSession
+Alias           irm -> Invoke-RestMethod
+Alias           ise -> powershell_ise.exe
+Alias           iwmi -> Invoke-WMIMethod
+Alias           iwr -> Invoke-WebRequest
+Alias           kill -> Stop-Process
+Alias           lp -> Out-Printer
+Alias           ls -> Get-ChildItem
+Alias           man -> help
+Alias           md -> mkdir
+Alias           measure -> Measure-Object
+Alias           mi -> Move-Item
+Alias           mount -> New-PSDrive
+Alias           move -> Move-Item
+Alias           mp -> Move-ItemProperty
+Alias           mv -> Move-Item
+Alias           nal -> New-Alias
+Alias           ndr -> New-PSDrive
+Alias           ni -> New-Item
+Alias           nmo -> New-Module
+Alias           npssc -> New-PSSessionConfigurationFile
+Alias           nsn -> New-PSSession
+Alias           nv -> New-Variable
+Alias           ogv -> Out-GridView
+Alias           oh -> Out-Host
+Alias           popd -> Pop-Location
+Alias           ps -> Get-Process
+Alias           pushd -> Push-Location
+Alias           pwd -> Get-Location
+Alias           r -> Invoke-History
+Alias           rbp -> Remove-PSBreakpoint
+Alias           rcjb -> Receive-Job
+Alias           rcsn -> Receive-PSSession
+Alias           rd -> Remove-Item
+Alias           rjb -> Remove-Job
+Alias           rm -> Remove-Item
+Alias           rmdir -> Remove-Item
+Alias           rmo -> Remove-Module
+Alias           rni -> Rename-Item
+Alias           rnp -> Rename-ItemProperty
+Alias           rp -> Remove-ItemProperty
+Alias           rsn -> Remove-PSSession
+Alias           rsnp -> Remove-PSSnapin
+Alias           rujb -> Resume-Job
+Alias           rv -> Remove-Variable
+Alias           rvpa -> Resolve-Path
+Alias           rwmi -> Remove-WMIObject
+Alias           sajb -> Start-Job
+Alias           sal -> Set-Alias
+Alias           saps -> Start-Process
+Alias           sasv -> Start-Service
+Alias           sbp -> Set-PSBreakpoint
+Alias           sc -> Set-Content
+Alias           select -> Select-Object
+Alias           set -> Set-Variable
+Alias           shcm -> Show-Command
+Alias           si -> Set-Item
+Alias           sl -> Set-Location
+Alias           sleep -> Start-Sleep
+Alias           sls -> Select-String
+Alias           sort -> Sort-Object
+Alias           sp -> Set-ItemProperty
+Alias           spjb -> Stop-Job
+Alias           spps -> Stop-Process
+Alias           spsv -> Stop-Service
+Alias           start -> Start-Process
+Alias           sujb -> Suspend-Job
+Alias           sv -> Set-Variable
+Alias           swmi -> Set-WMIInstance
+Alias           tee -> Tee-Object
+Alias           trcm -> Trace-Command
+Alias           type -> Get-Content
+Alias           wget -> Invoke-WebRequest
+Alias           where -> Where-Object
+Alias           wjb -> Wait-Job
+Alias           write -> Write-Output
+
+
+PS C:\WINDOWS\system32> Get-process
+Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName
+-------  ------    -----      -----     ------     --  -- -----------
+    160       9     2216       5268       0.48   4092   0 AdminService
+    259      13     5044      11128       0.33   1488   0 aesm_service
+    146       9     1856       5560       0.08   4052   0 armsvc
+    539      26    46764     103508      31.08   8032   0 aswEngSrv
+    911      27    36112      48000      74.16   7452   0 aswidsagent
+   5418     106   128508     197832     201.48   3688   0 AvastSvc
+   2310      55    33580      84124      38.20  13092   2 AvastUI
+    677      33    14368      33292       1.13  16072   2 AvastUI
+    348      17     4072      11568       0.28  14588   0 AvEmUpdate
+    248      27     8932      16668       0.30  10976   2 backgroundTaskHost
+    201      12     3732      15056       0.22  12604   2 backgroundTaskHost
+    216      12     4732      10068       0.16  11412   2 browserhost
+    246      17    27376      41324       0.88   7060   2 chrome
+    412      20    13604      26904       1.30  13160   2 chrome
+    304      20    35008      59480       1.56  13544   2 chrome
+    227      14    11896      18520       0.25  13908   2 chrome
+    158      10     2196       7032       0.06  16576   2 chrome
+    459      25    49480      60780      24.42  16984   2 chrome
+   1115      47    45128      91704      31.59  16992   2 chrome
+    213      14     2332        156       0.17   8344   0 ChromiumUpdate
+     74       5     2540       4176       0.06  16936   2 cmd
+    156      10     6708       5680       0.55   7064   0 conhost
+    115       8     6664       5844       0.02  11148   2 conhost
+    138      11     7004      10772       0.09  16876   2 conhost
+    254      14     4832      16296       7.67  17452   2 conhost
+    996      29     2136       4352       2.69    820   0 csrss
+    692      20     2456       4352      13.41   1380   2 csrss
+    436      16     4348      15028       3.34  10392   2 ctfmon
+    431      18     4024      10772       0.58   2644   0 dasHost
+    712      38    22476      34996       2.64  13276   0 DCCService
+    154       9     1824       8028       0.05  17012   0 DDVCollectorSvcApi
+ 507      24    22976      29740       3.67  10236   0 DDVDataCollector
+    449      21     8380      20532       0.91  17388   0 DDVRulesProcessor
+    924      47    43488      63736       7.39  13984   0 DellSupportAssistRemedationService
+    214      11     2408      11392       0.45  10280   2 dllhost
+    235      17     3600      11336       0.22  16108   2 dllhost
+     75       7     1600       4072       0.17   9492   2 dptf_helper
+    947      60   107772     126492      19.98  13936   0 DSAPI
+    838      33    60388      59348     105.80    824   2 dwm
+    129       8     1800       4296       0.03   3100   0 esif_uf
+   2228      76    60164     109056      44.30  10924   2 explorer
+     32       5     1672       1656       0.06    844   0 fontdrvhost
+     32       7     2276       3512       0.48   7388   2 fontdrvhost
+    175      11     1804        816       0.09  13756   0 GoogleCrashHandler
+    154       9     1848         92       0.08  12008   0 GoogleCrashHandler64
+    147      12     1608       6528       0.09  14472   0 GoogleUpdate
+    339      16     6208      24176       0.31   1704   2 HxTsr
+    526      42    28624      36244       4.56  15388   0 IAStorDataMgrSvc
+    357      31    23600      32964       2.02  13508   2 IAStorIcon
+      0       0       60          8                 0   0 Idle
+    171       9     1824       6772       0.13   2556   0 igfxCUIService
+    239      15     4212      12972       0.42  10340   2 igfxEM
+    145       8     1420       4564       0.03   3124   0 IntelCpHDCPSvc
+    136       7     1392       4488       0.08   4784   0 IntelCpHeciSvc
+    159      10     1436       5980       0.09  15480   0 jhi_service
+    366      18     3196      13056       0.73  13528   2 jucheck
+    257      15     2316      13616       0.25  13072   2 jusched
+    375      15     4152      12920       0.55   3512   0 LMS
+   1457      23     7236      14772      14.34    412   0 lsass
+    191      11     3084       2820       0.98   6148   0 mcapexe
+    604      24    11072      17104       2.97   6492   0 McCSPServiceHost
+    511      21    32228       8088       1.33   6952   0 mcshield
+    534      31    10756        772       2.20   8432   2 McUICnt
+      0       0      320      98744      14.06   2376   0 Memory Compression
+    538      29    15536       8924       3.63   6180   0 MfeAVSvc
+    380      23     5892      10512      56.11   3092   0 mfemms
+    352      13     5916       9420       8.28   5148   0 mfevtps
+   1303      62    44492      46624      67.67   4704   0 MMSSHOST
+    970      51    38860      39516      13.44   3388   0 ModuleCoreService
+    436      28    13564      12492       2.42  10508   2 ModuleCoreService
+    182      11     6528      10072       0.14   8740   0 msiexec
+    237      14     3088      14280      10.30  16184   2 notepad
+    397      28    17680       5984       1.19   4160   0 PEFService
+    843      54    70916      87412      12.27  18428   2 powershell
+ 112       7     1192       3520       0.05   4184   0 QcomWlanSrvx64
+    374      20     6308      15236       0.70  12752   2 quickset
+    302      11     4984       8780      28.00   7052   0 RAPS
+    243      13    14804      11900       0.48   4608   0 RAPSService
+    308      15     6100      13528       0.20   9452   2 RAVBg64
+    288      14     4488      12188       0.25  12680   2 RAVBg64
+      0      16    11636      38036       4.14     96   0 Registry
+    230       9     1804       5500       0.06   3296   0 RtkAudioService64
+    371      15     4472      12056       0.42  12644   2 RtkNGUI64
+    367      20     6388      25940       2.88   4748   2 RuntimeBroker
+    364      21     6796      26180      12.44   5400   2 RuntimeBroker
+    268      17     3760      19108       0.45  10168   2 RuntimeBroker
+    804      35    17484      50000       7.72  11300   2 RuntimeBroker
+    280      15     4296      15016       1.97  13912   2 RuntimeBroker
+    195      12     2744      11052       0.14  15164   2 RuntimeBroker
+    128       9     1864       7432       0.05  15316   2 RuntimeBroker
+    863      68    29400      36588      14.16   8136   0 SearchIndexer
+   1508      89   138200     206068      30.91   2900   2 SearchUI
+    409      18     4236      15424       0.66  12624   0 SecurityHealthService
+    155      10     1948       8524       0.09  12560   2 SecurityHealthSystray
+    419      30    75692      52104      10.61  10888   2 SegurazoClient
+    679      21     9620      12432      37.78   4260   0 SegurazoIC
+    812      39   140232     141316     281.02   4288   0 SegurazoService
+    512      32    12028       9324       3.83   6088   0 servicehost
+    890      12     7548       9620     239.81   1012   0 services
+    954      47    47920      67836       8.80  14932   0 ServiceShell
+    454      20     5944       4564       4.28  11048   2 SettingSyncHost
+     89       7     3652       6404       0.22  16716   0 SgrmBroker
+    693      26    14864      24796       4.03  13200   2 ShellExperienceHost
+    599      20     7316      27072      10.92   9916   2 sihost
+    316      18    87460      34608      23.59   4316   0 SmartByteNetworkService
+    444      23    25640       5092       2.48  15412   2 SmartByteTelemetry
+     53       3     1176        884       0.20    524   0 smss
+    152      10     2256      13224       0.08  15436   2 SpatialAudioLicenseSrv
+    471      25     5912      12580       0.70   3808   0 spoolsv
+    287      15     4504       3088       0.67  11308   2 SSScheduler
+    722      33    33344      81644       5.78   9416   2 StartMenuExperienceHost
+   1197      85   586196     132464      41.92   9344   0 SupportAssistAgent
+    109       8     1468       4704       1.88    744   0 svchost
+   1281      28    15124      30532     213.27    772   0 svchost
+   1506      19     8820      14912      40.66   1156   0 svchost
+    322      11     3004       7560       5.31   1204   0 svchost
+    331      13     2664       6528       4.34   1372   0 svchost
+    244      13     2904       8352       0.73   1392   0 svchost
+    193      13     2136       6028       5.81   1404   0 svchost
+    165      10     1988       5476       4.08   1440   0 svchost
+    287      15     3300       9332       6.31   1476   0 svchost
+    174       8     1940       5240       4.27   1512   0 svchost
+    242      12     4304       8432       3.83   1520   0 svchost
+    271      14     3148       9992       4.33   1524   0 svchost
+    187      11     2604      11588       5.39   1564   0 svchost
+    446      21     6928      13496      11.25   1736   0 svchost
+ 115       8     1488       5900       0.08   1752   0 svchost
+    264      11     2500       7012       3.64   1764   0 svchost
+    195      16     2456       5132       2.56   1784   0 svchost
+    228      13     3032      10820       0.42   1812   0 svchost
+    169      12     2300       8196       3.05   1864   0 svchost
+    473      16    18540      19536     135.50   1972   0 svchost
+    143       9     1904       6272       5.25   2012   0 svchost
+    238       8     1720       5252       2.59   2144   0 svchost
+    197      10     2376       7288       4.36   2160   0 svchost
+    270      14    56500      51512      23.91   2168   0 svchost
+    180      29     6112       7056       4.36   2308   0 svchost
+    287      12     2952       8908       4.88   2396   0 svchost
+    195      13     2296       8012       3.67   2456   0 svchost
+    186       9     2028       5812       3.38   2468   0 svchost
+    248      11     2780       6816       7.97   2476   0 svchost
+    181      11     2472       9936       4.81   2580   0 svchost
+    216      11    11552      19512      23.33   2600   0 svchost
+    390      17     5036      10196       1.47   2704   0 svchost
+    297      15     3252       6768      21.17   2800   0 svchost
+    441      13     3160       8380      70.20   2888   0 svchost
+    250      15     2372       5488       0.47   2972   0 svchost
+    199      10     2168       6628       2.92   3152   0 svchost
+    170      13     2088       5756       5.42   3160   0 svchost
+    546      23    16968      21592       3.47   3200   0 svchost
+    425      16     3848      16380       9.80   3224   0 svchost
+    419      20    33268      27588      18.47   3288   0 svchost
+    314      36     4528      13352       1.36   3396   0 svchost
+    155      13     2176       5700       5.67   3452   0 svchost
+    391      18     3040       8472       6.36   3460   0 svchost
+    166       9     1908       7044       0.08   3504   0 svchost
+    538      23     6668      15564       3.16   3616   0 svchost
+    261      15     3444      13140       5.41   3652   0 svchost
+    559      33    46612      47108      30.91   3816   0 svchost
+    463      34     9288      15332      99.22   3876   0 svchost
+    204      12     2400       6528       7.38   3908   0 svchost
+    267      13     2708       5200       0.31   4072   0 svchost
+    675      22    16496      24648      74.16   4084   0 svchost
+    225      13     2768       7720       4.52   4152   0 svchost
+    150      10     1944       4932       4.73   4216   0 svchost
+    206      12     2528       6984       6.97   4392   0 svchost
+    413      20     5004      18948       7.53   4404   0 svchost
+    617      26     6704      14820       4.94   4448   0 svchost
+    296      15     5060      12356       1.08   4548   0 svchost
+    227      13     2528       5664       4.97   4556   0 svchost
+    335      17     4124      18148       7.61   4672   0 svchost
+    881      79    30920      36796       9.55   4844   0 svchost
+    416      26     3568       9040       0.33   4888   0 svchost
+    420      25     5676      18896       1.00   5352   0 svchost
+    187       9     2044       6988       0.75   6012   0 svchost
+    438      21     4512      18732       0.92   6068   0 svchost
+    136       8     1784       4824       2.58   7072   0 svchost
+    162      11     1948       6864       0.66   7860   0 svchost
+    207      12     2800       9744       0.36   8296   0 svchost
+    482      19     9640      25552       2.09   9928   2 svchost
+    160      10     1904       7788       0.36   9936   2 svchost
+    541      27     9204      36992       4.55  10136   2 svchost
+    272      15     3868      16340       3.50  10212   0 svchost
+    166      10     1940       7324       0.09  10360   0 svchost
+    486      27     5852      21092       1.73  10872   2 svchost
+    319      16     3856      21496       0.39  11064   2 svchost
+    146       8     3908       9368       0.42  11528   0 svchost
+    316      17     4452      19880       0.61  11552   0 svchost
+    357      20     7396      16612       4.28  12472   0 svchost
+    336      17     4324      15676       0.31  13104   0 svchost
+    209      13     3052      10436       0.34  13152   0 svchost
+    236      14     3128      11212       0.98  13180   0 svchost
+    210      12     2600       7908       0.19  13612   0 svchost
+    324      16     4008      13632       1.91  14184   0 svchost
+    140      10     1764       6528       0.06  14652   0 svchost
+    209      12     2272       8428       0.16  14660   0 svchost
+    112       8     1512       4896       0.05  14908   0 svchost
+    270      17     3276       8820       0.22  15016   0 svchost
+    267      13     6232      16932       1.73  16132   0 svchost
+    520      30    10172      19836       0.67  16536   0 svchost
+    521      16     6564      20136      47.81   9504   2 SynTPEnh
+    218       7     1304       3928       0.03   4332   0 SynTPEnhService
+     72       7     1228       4804       0.05  10560   2 SynTPHelper
+   4537       0      208       1628     260.53      4   0 System
+    270      34     7620      16640       1.66   7504   2 taskhostw
+    363      19     5940      21456       0.53  14984   0 taskhostw
+    474      24    10688      11920       2.63   9480   2 uihost
+    252      13     4456      11272       0.33   9804   2 unsecapp
+    126       8     1568       6968       0.03  13448   0 unsecapp
+    411      19    15952      14308       2.31  12988   2 WavesSvc64
+    200      12     4412       5324       0.09   4324   0 WavesSysSvc64
+    266      15     3500       2620       0.39  12400   0 wermgr
+    492      22    10732      45608       0.42   5656   2 WindowsInternal.ComposableShell.Experiences.TextInput.Inpu...
+    159      11     1540       4516       0.13    904   0 wininit
+    268      11     2388       7876       0.30   5276   2 winlogon
+    261      13     4320      12384       0.56  13400   0 WmiApSrv
+   1473      30    22004      38708     437.23   4212   0 WmiPrvSE
+    424      22    14040      26352       6.33  13000   0 WmiPrvSE
+    223      10     4008       7804       0.25   2152   0 wsc_proxy
+    310      14     3872       7280       0.31    764   0 WUDFHost
+    627      45    20840      57368       1.02  14864   2 YourPhone
+
+
+PS C:\WINDOWS\system32> Write-Host
+PS C:\WINDOWS\system32> Get-unique                                                                                      PS C:\WINDOWS\system32> Get-command
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Alias           Add-AppPackage                                     2.0.1.0    Appx
+Alias           Add-AppPackageVolume                               2.0.1.0    Appx
+Alias           Add-AppProvisionedPackage                          3.0        Dism
+Alias           Add-ProvisionedAppPackage                          3.0        Dism
+Alias           Add-ProvisionedAppxPackage                         3.0        Dism
+Alias           Add-ProvisioningPackage                            3.0        Provisioning
+Alias           Add-TrustedProvisioningCertificate                 3.0        Provisioning
+Alias           Apply-WindowsUnattend                              3.0        Dism
+Alias           Disable-PhysicalDiskIndication                     2.0.0.0    Storage
+Alias           Disable-StorageDiagnosticLog                       2.0.0.0    Storage
+Alias           Dismount-AppPackageVolume                          2.0.1.0    Appx
+Alias           Enable-PhysicalDiskIndication                      2.0.0.0    Storage
+Alias           Enable-StorageDiagnosticLog                        2.0.0.0    Storage
+Alias           Flush-Volume                                       2.0.0.0    Storage
+Alias           Get-AppPackage                                     2.0.1.0    Appx
+Alias           Get-AppPackageDefaultVolume                        2.0.1.0    Appx
+Alias           Get-AppPackageLastError                            2.0.1.0    Appx
+Alias           Get-AppPackageLog                                  2.0.1.0    Appx
+Alias           Get-AppPackageManifest                             2.0.1.0    Appx
+Alias           Get-AppPackageVolume                               2.0.1.0    Appx
+Alias           Get-AppProvisionedPackage                          3.0        Dism
+Alias           Get-DiskSNV                                        2.0.0.0    Storage
+Alias           Get-PhysicalDiskSNV                                2.0.0.0    Storage
+Alias           Get-ProvisionedAppPackage                          3.0        Dism
+Alias           Get-ProvisionedAppxPackage                         3.0        Dism
+Alias           Get-StorageEnclosureSNV                            2.0.0.0    Storage
+Alias           Initialize-Volume                                  2.0.0.0    Storage
+Alias           Mount-AppPackageVolume                             2.0.1.0    Appx
+Alias           Move-AppPackage                                    2.0.1.0    Appx
+Alias           Move-SmbClient                                     2.0.0.0    SmbWitness
+Alias           Optimize-AppProvisionedPackages                    3.0        Dism
+Alias           Optimize-ProvisionedAppPackages                    3.0        Dism
+Alias           Optimize-ProvisionedAppxPackages                   3.0        Dism
+Alias           Remove-AppPackage                                  2.0.1.0    Appx
+Alias           Remove-AppPackageVolume                            2.0.1.0    Appx
+Alias           Remove-AppProvisionedPackage                       3.0        Dism
+Alias           Remove-EtwTraceSession                             1.0.0.0    EventTracingManagement
+Alias           Remove-ProvisionedAppPackage                       3.0        Dism
+Alias           Remove-ProvisionedAppxPackage                      3.0        Dism
+Alias           Remove-ProvisioningPackage                         3.0        Provisioning
+Alias           Remove-TrustedProvisioningCertificate              3.0        Provisioning
+Alias           Set-AppPackageDefaultVolume                        2.0.1.0    Appx
+Alias           Set-AppPackageProvisionedDataFile                  3.0        Dism
+Alias           Set-AutologgerConfig                               1.0.0.0    EventTracingManagement
+Alias           Set-EtwTraceSession                                1.0.0.0    EventTracingManagement
+Alias           Set-ProvisionedAppPackageDataFile                  3.0        Dism
+Alias           Set-ProvisionedAppXDataFile                        3.0        Dism
+Alias           Write-FileSystemCache                              2.0.0.0    Storage
+Function        A:
+Function        Add-BitLockerKeyProtector                          1.0.0.0    BitLocker
+Function        Add-DnsClientNrptRule                              1.0.0.0    DnsClient
+Function        Add-DtcClusterTMMapping                            1.0.0.0    MsDtc
+Function        Add-EtwTraceProvider                               1.0.0.0    EventTracingManagement
+Function        Add-InitiatorIdToMaskingSet                        2.0.0.0    Storage
+Function        Add-MpPreference                                   1.0        Defender
+Function        Add-NetEventNetworkAdapter                         1.0.0.0    NetEventPacketCapture
+Function        Add-NetEventPacketCaptureProvider                  1.0.0.0    NetEventPacketCapture
+Function        Add-NetEventProvider                               1.0.0.0    NetEventPacketCapture
+Function        Add-NetEventVFPProvider                            1.0.0.0    NetEventPacketCapture
+Function        Add-NetEventVmNetworkAdapter                       1.0.0.0    NetEventPacketCapture
+Function        Add-NetEventVmSwitch                               1.0.0.0    NetEventPacketCapture
+Function        Add-NetEventVmSwitchProvider                       1.0.0.0    NetEventPacketCapture
+Function        Add-NetEventWFPCaptureProvider                     1.0.0.0    NetEventPacketCapture
+Function        Add-NetIPHttpsCertBinding                          1.0.0.0    NetworkTransition
+Function        Add-NetLbfoTeamMember                              2.0.0.0    NetLbfo
+Function        Add-NetLbfoTeamNic                                 2.0.0.0    NetLbfo
+Function        Add-NetNatExternalAddress                          1.0.0.0    NetNat
+Function        Add-NetNatStaticMapping                            1.0.0.0    NetNat
+Function        Add-NetSwitchTeamMember                            1.0.0.0    NetSwitchTeam
+Function        Add-OdbcDsn                                        1.0.0.0    Wdac
+Function        Add-PartitionAccessPath                            2.0.0.0    Storage
+Function        Add-PhysicalDisk                                   2.0.0.0    Storage
+Function        Add-Printer                                        1.1        PrintManagement
+Function        Add-PrinterDriver                                  1.1        PrintManagement
+Function        Add-PrinterPort                                    1.1        PrintManagement
+Function        Add-StorageFaultDomain                             2.0.0.0    Storage
+Function        Add-TargetPortToMaskingSet                         2.0.0.0    Storage
+Function        Add-VirtualDiskToMaskingSet                        2.0.0.0    Storage
+Function        Add-VpnConnection                                  2.0.0.0    VpnClient
+Function        Add-VpnConnectionRoute                             2.0.0.0    VpnClient
+Function        Add-VpnConnectionTriggerApplication                2.0.0.0    VpnClient
+Function        Add-VpnConnectionTriggerDnsConfiguration           2.0.0.0    VpnClient
+Function        Add-VpnConnectionTriggerTrustedNetwork             2.0.0.0    VpnClient
+Function        AfterAll                                           3.4.0      Pester
+Function        AfterEach                                          3.4.0      Pester
+Function        Assert-MockCalled                                  3.4.0      Pester
+Function        Assert-VerifiableMocks                             3.4.0      Pester
+Function        B:
+Function        Backup-BitLockerKeyProtector                       1.0.0.0    BitLocker
+Function        BackupToAAD-BitLockerKeyProtector                  1.0.0.0    BitLocker
+Function        BeforeAll                                          3.4.0      Pester
+Function        BeforeEach                                         3.4.0      Pester
+Function        Block-FileShareAccess                              2.0.0.0    Storage
+Function        Block-SmbShareAccess                               2.0.0.0    SmbShare
+Function        C:
+Function        cd..
+Function        cd\
+Function        Clear-BitLockerAutoUnlock                          1.0.0.0    BitLocker
+Function        Clear-Disk                                         2.0.0.0    Storage
+Function        Clear-DnsClientCache                               1.0.0.0    DnsClient
+Function        Clear-FileStorageTier                              2.0.0.0    Storage
+Function        Clear-Host
+Function        Clear-PcsvDeviceLog                                1.0.0.0    PcsvDevice
+Function        Clear-StorageBusDisk                               1.0.0.0    StorageBusCache
+Function        Clear-StorageDiagnosticInfo                        2.0.0.0    Storage
+Function        Close-SmbOpenFile                                  2.0.0.0    SmbShare
+Function        Close-SmbSession 2.0.0.0    SmbShare
+Function        Compress-Archive                                   1.0.1.0    Microsoft.PowerShell.Archive
+Function        Configuration                                      1.1        PSDesiredStateConfiguration
+Function        Connect-IscsiTarget                                1.0.0.0    iSCSI
+Function        Connect-VirtualDisk                                2.0.0.0    Storage
+Function        Context                                            3.4.0      Pester
+Function        ConvertFrom-SddlString                             3.1.0.0    Microsoft.PowerShell.Utility
+Function        Copy-NetFirewallRule                               2.0.0.0    NetSecurity
+Function        Copy-NetIPsecMainModeCryptoSet                     2.0.0.0    NetSecurity
+Function        Copy-NetIPsecMainModeRule                          2.0.0.0    NetSecurity
+Function        Copy-NetIPsecPhase1AuthSet                         2.0.0.0    NetSecurity
+Function        Copy-NetIPsecPhase2AuthSet                         2.0.0.0    NetSecurity
+Function        Copy-NetIPsecQuickModeCryptoSet                    2.0.0.0    NetSecurity
+Function        Copy-NetIPsecRule                                  2.0.0.0    NetSecurity
+Function        D:
+Function        Debug-FileShare                                    2.0.0.0    Storage
+Function        Debug-MMAppPrelaunch                               1.0        MMAgent
+Function        Debug-StorageSubSystem                             2.0.0.0    Storage
+Function        Debug-Volume                                       2.0.0.0    Storage
+Function        Describe                                           3.4.0      Pester
+Function        Disable-BitLocker                                  1.0.0.0    BitLocker
+Function        Disable-BitLockerAutoUnlock                        1.0.0.0    BitLocker
+Function        Disable-DAManualEntryPointSelection                1.0.0.0    DirectAccessClientComponents
+Function        Disable-DscDebug                                   1.1        PSDesiredStateConfiguration
+Function        Disable-MMAgent                                    1.0        MMAgent
+Function        Disable-NetAdapter                                 2.0.0.0    NetAdapter
+Function        Disable-NetAdapterBinding                          2.0.0.0    NetAdapter
+Function        Disable-NetAdapterChecksumOffload                  2.0.0.0    NetAdapter
+Function        Disable-NetAdapterEncapsulatedPacketTaskOffload    2.0.0.0    NetAdapter
+Function        Disable-NetAdapterIPsecOffload                     2.0.0.0    NetAdapter
+Function        Disable-NetAdapterLso                              2.0.0.0    NetAdapter
+Function        Disable-NetAdapterPacketDirect                     2.0.0.0    NetAdapter
+Function        Disable-NetAdapterUso                              2.0.0.0    NetAdapter
+Function        Disable-NetAdapterVmq                              2.0.0.0    NetAdapter
+Function        Disable-NetDnsTransitionConfiguration              1.0.0.0    NetworkTransition
+Function        Disable-NetFirewallRule                            2.0.0.0    NetSecurity
+Function        Disable-NetIPHttpsProfile                          1.0.0.0    NetworkTransition
+Function        Disable-NetIPsecMainModeRule                       2.0.0.0    NetSecurity
+Function        Disable-NetIPsecRule                               2.0.0.0    NetSecurity
+Function        Disable-NetNatTransitionConfiguration              1.0.0.0    NetworkTransition
+Function        Disable-NetworkSwitchEthernetPort                  1.0.0.0    NetworkSwitchManager
+Function        Disable-NetworkSwitchFeature                       1.0.0.0    NetworkSwitchManager
+Function        Disable-NetworkSwitchVlan                          1.0.0.0    NetworkSwitchManager
+Function        Disable-OdbcPerfCounter                            1.0.0.0    Wdac
+Function        Disable-PhysicalDiskIdentification                 2.0.0.0    Storage
+Function        Disable-PnpDevice                                  1.0.0.0    PnpDevice
+Function        Disable-PSTrace                                    1.0.0.0    PSDiagnostics
+Function        Disable-PSWSManCombinedTrace                       1.0.0.0    PSDiagnostics
+Function        Disable-ScheduledTask                              1.0.0.0    ScheduledTasks
+Function        Disable-SmbDelegation                              2.0.0.0    SmbShare
+Function        Disable-StorageBusCache                            1.0.0.0    StorageBusCache
+Function        Disable-StorageBusDisk                             1.0.0.0    StorageBusCache
+Function        Disable-StorageEnclosureIdentification             2.0.0.0    Storage
+Function        Disable-StorageEnclosurePower                      2.0.0.0    Storage
+Function        Disable-StorageHighAvailability                    2.0.0.0    Storage
+Function        Disable-StorageMaintenanceMode                     2.0.0.0    Storage
+Function        Disable-WdacBidTrace                               1.0.0.0    Wdac
+Function        Disable-WSManTrace                                 1.0.0.0    PSDiagnostics
+Function        Disconnect-IscsiTarget                             1.0.0.0    iSCSI
+Function        Disconnect-VirtualDisk                             2.0.0.0    Storage
+Function        Dismount-DiskImage                                 2.0.0.0    Storage
+Function        E:
+Function        Enable-BitLocker                                   1.0.0.0    BitLocker
+Function        Enable-BitLockerAutoUnlock                         1.0.0.0    BitLocker
+Function        Enable-DAManualEntryPointSelection                 1.0.0.0    DirectAccessClientComponents
+Function        Enable-DscDebug                                    1.1        PSDesiredStateConfiguration
+Function        Enable-MMAgent                                     1.0        MMAgent
+Function        Enable-NetAdapter                                  2.0.0.0    NetAdapter
+Function        Enable-NetAdapterBinding                           2.0.0.0    NetAdapter
+Function        Enable-NetAdapterChecksumOffload                   2.0.0.0    NetAdapter
+Function        Enable-NetAdapterEncapsulatedPacketTaskOffload     2.0.0.0    NetAdapter
+Function        Enable-NetAdapterIPsecOffload                      2.0.0.0    NetAdapter
+Function        Enable-NetAdapterLso                               2.0.0.0    NetAdapter
+Function        Enable-NetAdapterPacketDirect                      2.0.0.0    NetAdapter
+Function        Enable-NetAdapterPowerManagement                   2.0.0.0    NetAdapter
+Function        Enable-NetAdapterQos                               2.0.0.0    NetAdapter
+Function        Enable-NetAdapterRdma                              2.0.0.0    NetAdapter
+Function        Enable-NetAdapterRsc                               2.0.0.0    NetAdapter
+Function        Enable-NetAdapterRss                               2.0.0.0    NetAdapter
+Function        Enable-NetAdapterSriov                             2.0.0.0    NetAdapter
+Function        Enable-NetAdapterUso                               2.0.0.0    NetAdapter
+Function        Enable-NetAdapterVmq                               2.0.0.0    NetAdapter
+Function        Enable-NetDnsTransitionConfiguration               1.0.0.0    NetworkTransition
+Function        Enable-NetFirewallRule                             2.0.0.0    NetSecurity
+Function        Enable-NetIPHttpsProfile                           1.0.0.0    NetworkTransition
+Function        Enable-NetIPsecMainModeRule                        2.0.0.0    NetSecurity
+Function        Enable-NetIPsecRule                                2.0.0.0    NetSecurity
+Function        Enable-NetNatTransitionConfiguration               1.0.0.0    NetworkTransition
+Function        Enable-NetworkSwitchEthernetPort                   1.0.0.0    NetworkSwitchManager
+Function        Enable-NetworkSwitchFeature                        1.0.0.0    NetworkSwitchManager
+Function        Enable-NetworkSwitchVlan                           1.0.0.0    NetworkSwitchManager
+Function        Enable-OdbcPerfCounter                             1.0.0.0    Wdac
+Function        Enable-PhysicalDiskIdentification                  2.0.0.0    Storage
+Function        Enable-PnpDevice                                   1.0.0.0    PnpDevice
+Function        Enable-PSTrace                                     1.0.0.0    PSDiagnostics
+Function        Enable-PSWSManCombinedTrace                        1.0.0.0    PSDiagnostics
+Function        Enable-ScheduledTask                               1.0.0.0    ScheduledTasks
+Function        Enable-SmbDelegation                               2.0.0.0    SmbShare
+Function        Enable-StorageBusCache                             1.0.0.0    StorageBusCache
+Function        Enable-StorageBusDisk                              1.0.0.0    StorageBusCache
+Function        Enable-StorageEnclosureIdentification              2.0.0.0    Storage
+Function        Enable-StorageEnclosurePower                       2.0.0.0    Storage
+Function        Enable-StorageHighAvailability                     2.0.0.0    Storage
+Function        Enable-StorageMaintenanceMode                      2.0.0.0    Storage
+Function        Enable-WdacBidTrace                                1.0.0.0    Wdac
+Function        Enable-WSManTrace                                  1.0.0.0    PSDiagnostics
+Function        Expand-Archive                                     1.0.1.0    Microsoft.PowerShell.Archive
+Function        Export-ODataEndpointProxy                          1.0        Microsoft.PowerShell.ODataUtils
+Function        Export-ScheduledTask                               1.0.0.0    ScheduledTasks
+Function        F:
+Function        Find-Command                                       1.0.0.1    PowerShellGet
+Function        Find-DscResource                                   1.0.0.1    PowerShellGet
+Function        Find-Module                                        1.0.0.1    PowerShellGet
+Function        Find-NetIPsecRule                                  2.0.0.0    NetSecurity
+Function        Find-NetRoute                                      1.0.0.0    NetTCPIP
+Function        Find-RoleCapability                                1.0.0.1    PowerShellGet
+Function        Find-Script                                        1.0.0.1    PowerShellGet
+Function        Flush-EtwTraceSession                              1.0.0.0    EventTracingManagement
+Function        Format-Hex                                         3.1.0.0    Microsoft.PowerShell.Utility
+Function        Format-Volume                                      2.0.0.0    Storage
+Function        G:
+Function        Get-AppBackgroundTask                              1.0.0.0    AppBackgroundTask
+Function        Get-AppxLastError                                  2.0.1.0    Appx
+Function        Get-AppxLog                                        2.0.1.0    Appx
+Function        Get-AutologgerConfig                               1.0.0.0    EventTracingManagement
+Function        Get-BitLockerVolume                                1.0.0.0    BitLocker
+Function        Get-ClusteredScheduledTask                         1.0.0.0    ScheduledTasks
+Function        Get-DAClientExperienceConfiguration                1.0.0.0    DirectAccessClientComponents
+Function        Get-DAConnectionStatus                             1.0.0.0    NetworkConnectivityStatus
+Function        Get-DAEntryPointTableItem                          1.0.0.0    DirectAccessClientComponents
+Function        Get-DedupProperties                                2.0.0.0    Storage
+Function        Get-Disk                                           2.0.0.0    Storage
+Function        Get-DiskImage                                      2.0.0.0    Storage
+Function        Get-DiskStorageNodeView                            2.0.0.0    Storage
+Function        Get-DnsClient                                      1.0.0.0    DnsClient
+Function        Get-DnsClientCache                                 1.0.0.0    DnsClient
+Function        Get-DnsClientGlobalSetting                         1.0.0.0    DnsClient
+Function        Get-DnsClientNrptGlobal                            1.0.0.0    DnsClient
+Function        Get-DnsClientNrptPolicy                            1.0.0.0    DnsClient
+Function        Get-DnsClientNrptRule                              1.0.0.0    DnsClient
+Function        Get-DnsClientServerAddress                         1.0.0.0    DnsClient
+Function        Get-DscConfiguration                               1.1        PSDesiredStateConfiguration
+Function        Get-DscConfigurationStatus                         1.1        PSDesiredStateConfiguration
+Function        Get-DscLocalConfigurationManager                   1.1        PSDesiredStateConfiguration
+Function        Get-DscResource                                    1.1        PSDesiredStateConfiguration
+Function        Get-Dtc                                            1.0.0.0    MsDtc
+Function        Get-DtcAdvancedHostSetting                         1.0.0.0    MsDtc
+Function        Get-DtcAdvancedSetting                             1.0.0.0    MsDtc
+Function        Get-DtcClusterDefault                              1.0.0.0    MsDtc
+Function        Get-DtcClusterTMMapping                            1.0.0.0    MsDtc
+Function        Get-DtcDefault                                     1.0.0.0    MsDtc
+Function        Get-DtcLog                                         1.0.0.0    MsDtc
+Function        Get-DtcNetworkSetting                              1.0.0.0    MsDtc
+Function        Get-DtcTransaction                                 1.0.0.0    MsDtc
+Function        Get-DtcTransactionsStatistics                      1.0.0.0    MsDtc
+Function        Get-DtcTransactionsTraceSession                    1.0.0.0    MsDtc
+Function        Get-DtcTransactionsTraceSetting                    1.0.0.0    MsDtc
+Function        Get-EtwTraceProvider                               1.0.0.0    EventTracingManagement
+Function        Get-EtwTraceSession                                1.0.0.0    EventTracingManagement
+Function        Get-FileHash                                       3.1.0.0    Microsoft.PowerShell.Utility
+Function        Get-FileIntegrity                                  2.0.0.0    Storage
+Function        Get-FileShare                                      2.0.0.0    Storage
+Function        Get-FileShareAccessControlEntry                    2.0.0.0    Storage
+Function        Get-FileStorageTier                                2.0.0.0    Storage
+Function        Get-InitiatorId                                    2.0.0.0    Storage
+Function        Get-InitiatorPort                                  2.0.0.0    Storage
+Function        Get-InstalledModule                                1.0.0.1    PowerShellGet
+Function        Get-InstalledScript                                1.0.0.1    PowerShellGet
+Function        Get-IscsiConnection                                1.0.0.0    iSCSI
+Function        Get-IscsiSession                                   1.0.0.0    iSCSI
+Function        Get-IscsiTarget                                    1.0.0.0    iSCSI
+Function        Get-IscsiTargetPortal                              1.0.0.0    iSCSI
+Function        Get-IseSnippet                                     1.0.0.0    ISE
+Function        Get-LogProperties                                  1.0.0.0    PSDiagnostics
+Function        Get-MaskingSet                                     2.0.0.0    Storage
+Function        Get-MMAgent                                        1.0        MMAgent
+Function        Get-MockDynamicParameters                          3.4.0      Pester
+Function        Get-MpComputerStatus                               1.0        Defender
+Function        Get-MpPreference                                   1.0        Defender
+Function        Get-MpThreat                                       1.0        Defender
+Function        Get-MpThreatCatalog                                1.0        Defender
+Function        Get-MpThreatDetection                              1.0        Defender
+Function        Get-NCSIPolicyConfiguration                        1.0.0.0    NetworkConnectivityStatus
+Function        Get-Net6to4Configuration                           1.0.0.0    NetworkTransition
+Function        Get-NetAdapter                                     2.0.0.0    NetAdapter
+Function        Get-NetAdapterAdvancedProperty                     2.0.0.0    NetAdapter
+Function        Get-NetEventNetworkAdapter                         1.0.0.0    NetEventPacketCapture
+Function        Get-NetEventPacketCaptureProvider                  1.0.0.0    NetEventPacketCapture
+Function        Get-NetEventProvider                               1.0.0.0    NetEventPacketCapture
+Function        Get-NetEventSession                                1.0.0.0    NetEventPacketCapture
+Function        Get-NetEventVFPProvider                            1.0.0.0    NetEventPacketCapture
+Function        Get-NetEventVmNetworkAdapter                       1.0.0.0    NetEventPacketCapture
+Function        Get-NetEventVmSwitch                               1.0.0.0    NetEventPacketCapture
+Function        Get-NetEventVmSwitchProvider                       1.0.0.0    NetEventPacketCapture
+Function        Get-NetEventWFPCaptureProvider                     1.0.0.0    NetEventPacketCapture
+Function        Get-NetFirewallAddressFilter                       2.0.0.0    NetSecurity
+Function        Get-NetFirewallApplicationFilter                   2.0.0.0    NetSecurity
+Function        Get-NetFirewallInterfaceFilter                     2.0.0.0    NetSecurity
+Function        Get-NetFirewallInterfaceTypeFilter                 2.0.0.0    NetSecurity
+Function        Get-NetFirewallPortFilter                          2.0.0.0    NetSecurity
+Function        Get-NetFirewallProfile                             2.0.0.0    NetSecurity
+Function        Get-NetFirewallRule                                2.0.0.0    NetSecurity
+Function        Get-NetFirewallSecurityFilter                      2.0.0.0    NetSecurity
+Function        Get-NetFirewallServiceFilter                       2.0.0.0    NetSecurity
+Function        Get-NetFirewallSetting                             2.0.0.0    NetSecurity
+Function        Get-NetIPAddress                                   1.0.0.0    NetTCPIP
+Function        Get-NetIPConfiguration                             1.0.0.0    NetTCPIP
+Function        Get-NetIPHttpsConfiguration                        1.0.0.0    NetworkTransition
+Function        Get-NetIPHttpsState                                1.0.0.0    NetworkTransition
+Function        Get-NetIPInterface                                 1.0.0.0    NetTCPIP
+Function        Get-NetIPsecDospSetting                            2.0.0.0    NetSecurity
+Function        Get-NetIPsecMainModeCryptoSet                      2.0.0.0    NetSecurity
+Function        Get-NetIPsecMainModeRule                           2.0.0.0    NetSecurity
+Function        Get-NetIPsecMainModeSA                             2.0.0.0    NetSecurity
+Function        Get-NetIPsecPhase1AuthSet                          2.0.0.0    NetSecurity
+Function        Get-NetIPsecPhase2AuthSet                          2.0.0.0    NetSecurity
+Function        Get-NetIPsecQuickModeCryptoSet                     2.0.0.0    NetSecurity
+Function        Get-NetIPsecQuickModeSA                            2.0.0.0    NetSecurity
+Function        Get-NetIPsecRule                                   2.0.0.0    NetSecurity
+Function        Get-NetIPv4Protocol                                1.0.0.0    NetTCPIP
+Function        Get-NetIPv6Protocol                                1.0.0.0    NetTCPIP
+Function        Get-NetIsatapConfiguration                         1.0.0.0    NetworkTransition
+Function        Get-NetLbfoTeam                                    2.0.0.0    NetLbfo
+Function        Get-NetLbfoTeamMember                              2.0.0.0    NetLbfo
+Function        Get-NetLbfoTeamNic                                 2.0.0.0    NetLbfo
+Function        Get-NetNat                                         1.0.0.0    NetNat
+Function        Get-NetNatExternalAddress                          1.0.0.0    NetNat
+Function        Get-NetNatGlobal                                   1.0.0.0    NetNat
+Function        Get-NetNatSession                                  1.0.0.0    NetNat
+Function        Get-NetNatStaticMapping                            1.0.0.0    NetNat
+Function        Get-NetNatTransitionConfiguration                  1.0.0.0    NetworkTransition
+Function        Get-NetNatTransitionMonitoring                     1.0.0.0    NetworkTransition
+Function        Get-NetNeighbor                                    1.0.0.0    NetTCPIP
+Function        Get-NetOffloadGlobalSetting                        1.0.0.0    NetTCPIP
+Function        Get-NetPrefixPolicy                                1.0.0.0    NetTCPIP
+Function        Get-NetQosPolicy                                   2.0.0.0    NetQos
+Function        Get-NetRoute                                       1.0.0.0    NetTCPIP
+Function        Get-NetSwitchTeam                                  1.0.0.0    NetSwitchTeam
+Function        Get-NetSwitchTeamMember                            1.0.0.0    NetSwitchTeam
+Function        Get-NetTCPConnection                               1.0.0.0    NetTCPIP
+Function        Get-NetTCPSetting                                  1.0.0.0    NetTCPIP
+Function        Get-NetTeredoConfiguration                         1.0.0.0    NetworkTransition
+Function        Get-NetTeredoState                                 1.0.0.0    NetworkTransition
+Function        Get-NetTransportFilter                             1.0.0.0    NetTCPIP
+Function        Get-NetUDPEndpoint                                 1.0.0.0    NetTCPIP
+Function        Get-NetUDPSetting                                  1.0.0.0    NetTCPIP
+Function        Get-NetworkSwitchEthernetPort                      1.0.0.0    NetworkSwitchManager
+Function        Get-NetworkSwitchFeature                           1.0.0.0    NetworkSwitchManager
+Function        Get-NetworkSwitchGlobalData                        1.0.0.0    NetworkSwitchManager
+Function        Get-NetworkSwitchVlan                              1.0.0.0    NetworkSwitchManager
+Function        Get-OdbcDriver                                     1.0.0.0    Wdac
+Function        Get-OdbcDsn                                        1.0.0.0    Wdac
+Function        Get-OdbcPerfCounter                                1.0.0.0    Wdac
+Function        Get-OffloadDataTransferSetting                     2.0.0.0    Storage
+Function        Get-OperationValidation                            1.0.1      Microsoft.PowerShell.Operation.Validation
+Function        Get-Partition                                      2.0.0.0    Storage
+Function        Get-PartitionSupportedSize                         2.0.0.0    Storage
+Function        Get-PcsvDevice                                     1.0.0.0    PcsvDevice
+Function        Get-PcsvDeviceLog                                  1.0.0.0    PcsvDevice
+Function        Get-PhysicalDisk                                   2.0.0.0    Storage
+Function        Get-PhysicalDiskStorageNodeView                    2.0.0.0    Storage
+Function        Get-PhysicalExtent                                 2.0.0.0    Storage
+Function        Get-PhysicalExtentAssociation                      2.0.0.0    Storage
+Function        Get-PnpDevice                                      1.0.0.0    PnpDevice
+Function        Get-PnpDeviceProperty                              1.0.0.0    PnpDevice
+Function        Get-PrintConfiguration                             1.1        PrintManagement
+Function        Get-Printer                                        1.1        PrintManagement
+Function        Get-PrinterDriver                                  1.1        PrintManagement
+Function        Get-PrinterPort                                    1.1        PrintManagement
+Function        Get-PrinterProperty                                1.1        PrintManagement
+Function        Get-PrintJob                                       1.1        PrintManagement
+Function        Get-PSRepository                                   1.0.0.1    PowerShellGet
+Function        Get-ResiliencySetting                              2.0.0.0    Storage
+Function        Get-ScheduledTask                                  1.0.0.0    ScheduledTasks
+Function        Get-ScheduledTaskInfo                              1.0.0.0    ScheduledTasks
+Function        Get-SmbBandWidthLimit                              2.0.0.0    SmbShare
+Function        Get-SmbClientConfiguration                         2.0.0.0    SmbShare
+Function        Get-SmbClientNetworkInterface                      2.0.0.0    SmbShare
+Function        Get-SmbConnection                                  2.0.0.0    SmbShare
+Function        Get-SmbDelegation                                  2.0.0.0    SmbShare
+Function        Get-SmbGlobalMapping                               2.0.0.0    SmbShare
+Function        Get-SmbMapping                                     2.0.0.0    SmbShare
+Function        Get-SmbMultichannelConnection                      2.0.0.0    SmbShare
+Function        Get-SmbMultichannelConstraint                      2.0.0.0    SmbShare
+Function        Get-SmbOpenFile                                    2.0.0.0    SmbShare
+Function        Get-SmbServerConfiguration                         2.0.0.0    SmbShare
+Function        Get-SmbServerNetworkInterface                      2.0.0.0    SmbShare
+Function        Get-SmbSession                                     2.0.0.0    SmbShare
+Function        Get-SmbShare                                       2.0.0.0    SmbShare
+Function        Get-SmbShareAccess                                 2.0.0.0    SmbShare
+Function        Get-SmbWitnessClient                               2.0.0.0    SmbWitness
+Function        Get-StartApps                                      1.0.0.0    StartLayout
+Function        Get-StorageAdvancedProperty                        2.0.0.0    Storage
+Function        Get-StorageBusBinding                              1.0.0.0    StorageBusCache
+Function        Get-StorageBusDisk                                 1.0.0.0    StorageBusCache
+Function        Get-StorageChassis                                 2.0.0.0    Storage
+Function        Get-StorageDiagnosticInfo                          2.0.0.0    Storage
+Function        Get-StorageEnclosure                               2.0.0.0    Storage
+Function        Get-StorageEnclosureStorageNodeView                2.0.0.0    Storage
+Function        Get-StorageEnclosureVendorData                     2.0.0.0    Storage
+Function        Get-StorageExtendedStatus                          2.0.0.0    Storage
+Function        Get-StorageFaultDomain                             2.0.0.0    Storage
+Function        Get-StorageFileServer                              2.0.0.0    Storage
+Function        Get-StorageFirmwareInformation                     2.0.0.0    Storage
+Function        Get-StorageHealthAction                            2.0.0.0    Storage
+Function        Get-StorageHealthReport                            2.0.0.0    Storage
+Function        Get-StorageHealthSetting                           2.0.0.0    Storage
+Function        Get-StorageHistory                                 2.0.0.0    Storage
+Function        Get-StorageJob                                     2.0.0.0    Storage
+Function        Get-StorageNode                                    2.0.0.0    Storage
+Function        Get-StoragePool                                    2.0.0.0    Storage
+Function        Get-StorageProvider                                2.0.0.0    Storage
+Function        Get-StorageRack                                    2.0.0.0    Storage
+Function        Get-StorageReliabilityCounter                      2.0.0.0    Storage
+Function        Get-StorageScaleUnit                               2.0.0.0    Storage
+Function        Get-StorageSetting                                 2.0.0.0    Storage
+Function        Get-StorageSubSystem                               2.0.0.0    Storage
+Function        Get-StorageTier                                    2.0.0.0    Storage
+Function        Get-StorageTierSupportedSize                       2.0.0.0    Storage
+Function        Get-SupportedClusterSizes                          2.0.0.0    Storage
+Function        Get-SupportedFileSystems                           2.0.0.0    Storage
+Function        Get-TargetPort                                     2.0.0.0    Storage
+Function        Get-TargetPortal                                   2.0.0.0    Storage
+Function        Get-TestDriveItem                                  3.4.0      Pester
+Function        Get-Verb
+Function        Get-VirtualDisk                                    2.0.0.0    Storage
+Function        Get-VirtualDiskSupportedSize                       2.0.0.0    Storage
+Function        Get-Volume                                         2.0.0.0    Storage
+Function        Get-VolumeCorruptionCount                          2.0.0.0    Storage
+Function        Get-VolumeScrubPolicy                              2.0.0.0    Storage
+Function        Get-VpnConnection                                  2.0.0.0    VpnClient
+Function        Get-VpnConnectionTrigger                           2.0.0.0    VpnClient
+Function        Get-WdacBidTrace                                   1.0.0.0    Wdac
+Function        Get-WindowsUpdateLog                               1.0.0.0    WindowsUpdate
+Function        Get-WUAVersion                                     1.0.0.2    WindowsUpdateProvider
+Function        Get-WUIsPendingReboot                              1.0.0.2    WindowsUpdateProvider
+Function        Get-WULastInstallationDate                         1.0.0.2    WindowsUpdateProvider
+Function        Get-WULastScanSuccessDate                          1.0.0.2    WindowsUpdateProvider
+Function        Grant-FileShareAccess                              2.0.0.0    Storage
+Function        Grant-SmbShareAccess                               2.0.0.0    SmbShare
+Function        H:
+Function        help
+Function        Hide-VirtualDisk                                   2.0.0.0    Storage
+Function        I:
+Function        Import-IseSnippet                                  1.0.0.0    ISE
+Function        Import-PowerShellDataFile                          3.1.0.0    Microsoft.PowerShell.Utility
+Function        ImportSystemModules
+Function        In                                                 3.4.0      Pester
+Function        Initialize-Disk                                    2.0.0.0    Storage
+Function        InModuleScope                                      3.4.0      Pester
+Function        Install-Dtc                                        1.0.0.0    MsDtc
+Function        Install-Module                                     1.0.0.1    PowerShellGet
+Function        Install-Script                                     1.0.0.1    PowerShellGet
+Function        Install-WUUpdates                                  1.0.0.2    WindowsUpdateProvider
+Function        Invoke-AsWorkflow                                  1.0.0.0    PSWorkflowUtility
+Function        Invoke-Mock                                        3.4.0      Pester
+Function        Invoke-OperationValidation                         1.0.1      Microsoft.PowerShell.Operation.Validation
+Function        Invoke-Pester                                      3.4.0      Pester
+Function        It                                                 3.4.0      Pester
+Function        J:
+Function        K:
+Function        L:
+Function        Lock-BitLocker                                     1.0.0.0    BitLocker
+Function        M:
+Function        mkdir
+Function        Mock                                               3.4.0      Pester
+Function        more
+Function        Mount-DiskImage                                    2.0.0.0    Storage
+Function        Move-SmbWitnessClient                              2.0.0.0    SmbWitness
+Function        N:
+Function        New-AutologgerConfig                               1.0.0.0    EventTracingManagement
+Function        New-DAEntryPointTableItem                          1.0.0.0    DirectAccessClientComponents
+Function        New-DscChecksum                                    1.1        PSDesiredStateConfiguration
+Function        New-EapConfiguration                               2.0.0.0    VpnClient
+Function        New-EtwTraceSession                                1.0.0.0    EventTracingManagement
+Function        New-FileShare                                      2.0.0.0    Storage
+Function        New-Fixture                                        3.4.0      Pester
+Function        New-Guid                                           3.1.0.0    Microsoft.PowerShell.Utility
+Function        New-IscsiTargetPortal                              1.0.0.0    iSCSI
+Function        New-IseSnippet                                     1.0.0.0    ISE
+Function        New-MaskingSet                                     2.0.0.0    Storage
+Function        New-NetAdapterAdvancedProperty                     2.0.0.0    NetAdapter
+Function        New-NetEventSession                                1.0.0.0    NetEventPacketCapture
+Function        New-NetFirewallRule                                2.0.0.0    NetSecurity
+Function        New-NetIPAddress                                   1.0.0.0    NetTCPIP
+Function        New-NetIPHttpsConfiguration                        1.0.0.0    NetworkTransition
+Function        New-NetIPsecDospSetting                            2.0.0.0    NetSecurity
+Function        New-NetIPsecMainModeCryptoSet                      2.0.0.0    NetSecurity
+Function        New-NetIPsecMainModeRule                           2.0.0.0    NetSecurity
+Function        New-NetIPsecPhase1AuthSet                          2.0.0.0    NetSecurity
+Function        New-NetIPsecPhase2AuthSet                          2.0.0.0    NetSecurity
+Function        New-NetIPsecQuickModeCryptoSet                     2.0.0.0    NetSecurity
+Function        New-NetIPsecRule                                   2.0.0.0    NetSecurity
+Function        New-NetLbfoTeam                                    2.0.0.0    NetLbfo
+Function        New-NetNat                                         1.0.0.0    NetNat
+Function        New-NetNatTransitionConfiguration                  1.0.0.0    NetworkTransition
+Function        New-NetNeighbor                                    1.0.0.0    NetTCPIP
+Function        New-NetQosPolicy                                   2.0.0.0    NetQos
+Function        New-NetRoute                                       1.0.0.0    NetTCPIP
+Function        New-NetSwitchTeam                                  1.0.0.0    NetSwitchTeam
+Function        New-NetTransportFilter                             1.0.0.0    NetTCPIP
+Function        New-NetworkSwitchVlan                              1.0.0.0    NetworkSwitchManager
+Function        New-Partition                                      2.0.0.0    Storage
+Function        New-PesterOption                                   3.4.0      Pester
+Function        New-PSWorkflowSession                              2.0.0.0    PSWorkflow
+Function        New-ScheduledTask                                  1.0.0.0    ScheduledTasks
+Function        New-ScheduledTaskAction                            1.0.0.0    ScheduledTasks
+Function        New-ScheduledTaskPrincipal                         1.0.0.0    ScheduledTasks
+Function        New-ScheduledTaskSettingsSet                       1.0.0.0    ScheduledTasks
+Function        New-ScheduledTaskTrigger                           1.0.0.0    ScheduledTasks
+Function        New-ScriptFileInfo                                 1.0.0.1    PowerShellGet
+Function        New-SmbGlobalMapping                               2.0.0.0    SmbShare
+Function        New-SmbMapping                                     2.0.0.0    SmbShare
+Function        New-SmbMultichannelConstraint                      2.0.0.0    SmbShare
+Function        New-SmbShare                                       2.0.0.0    SmbShare
+Function        New-StorageBusBinding                              1.0.0.0    StorageBusCache
+Function        New-StorageBusCacheStore                           1.0.0.0    StorageBusCache
+Function        New-StorageFileServer                              2.0.0.0    Storage
+Function        New-StoragePool                                    2.0.0.0    Storage
+Function        New-StorageSubsystemVirtualDisk                    2.0.0.0Storage
+Function        New-VpnServerAddress                               2.0.0.0    VpnClient
+Function        O:
+Function        Open-NetGPO                                        2.0.0.0    NetSecurity
+Function        Optimize-StoragePool                               2.0.0.0    Storage
+Function        Optimize-Volume                                    2.0.0.0    Storage
+Function        oss
+Function        P:
+Function        Pause
+Function        prompt
+Function        PSConsoleHostReadLine                              2.0.0      PSReadline
+Function        Publish-Module                                     1.0.0.1    PowerShellGet
+Function        Publish-Script                                     1.0.0.1    PowerShellGet
+Function        Q:
+Function        R:
+Function        Read-PrinterNfcTag                                 1.1        PrintManagement
+Function        Register-ClusteredScheduledTask                    1.0.0.0    ScheduledTasks
+Function        Register-DnsClient                                 1.0.0.0    DnsClient
+Function        Register-IscsiSession                              1.0.0.0    iSCSI
+Function        Register-PSRepository                              1.0.0.1    PowerShellGet
+Function        Register-ScheduledTask                             1.0.0.0    ScheduledTasks
+Function        Register-StorageSubsystem                          2.0.0.0    Storage
+Function        Remove-AutologgerConfig                            1.0.0.0    EventTracingManagement
+Function        Remove-BitLockerKeyProtector                       1.0.0.0    BitLocker
+Function        Remove-DAEntryPointTableItem                       1.0.0.0    DirectAccessClientComponents
+Function        Remove-DnsClientNrptRule                           1.0.0.0    DnsClient
+Function        Remove-DscConfigurationDocument                    1.1        PSDesiredStateConfiguration
+Function        Remove-DtcClusterTMMapping                         1.0.0.0    MsDtc
+Function        Remove-EtwTraceProvider                            1.0.0.0    EventTracingManagement
+Function        Remove-FileShare                                   2.0.0.0    Storage
+Function        Remove-InitiatorId                                 2.0.0.0    Storage
+Function        Remove-InitiatorIdFromMaskingSet                   2.0.0.0    Storage
+Function        Remove-IscsiTargetPortal                           1.0.0.0    iSCSI
+Function        Remove-MaskingSet                                  2.0.0.0    Storage
+Function        Remove-MpPreference                                1.0        Defender
+Function        Remove-MpThreat                                    1.0        Defender
+Function        Remove-NetAdapterAdvancedProperty                  2.0.0.0    NetAdapter
+Function        Remove-NetEventNetworkAdapter                      1.0.0.0    NetEventPacketCapture
+Function        Remove-NetEventPacketCaptureProvider               1.0.0.0    NetEventPacketCapture
+Function        Remove-NetEventProvider                            1.0.0.0    NetEventPacketCapture
+Function        Remove-NetEventSession                             1.0.0.0    NetEventPacketCapture
+Function        Remove-NetEventVFPProvider                         1.0.0.0    NetEventPacketCapture
+Function        Remove-NetEventVmNetworkAdapter                    1.0.0.0    NetEventPacketCapture
+Function        Remove-NetEventVmSwitch                            1.0.0.0    NetEventPacketCapture
+Function        Remove-NetEventVmSwitchProvider                    1.0.0.0    NetEventPacketCapture
+Function        Remove-NetEventWFPCaptureProvider                  1.0.0.0    NetEventPacketCapture
+Function        Remove-NetFirewallRule                             2.0.0.0    NetSecurity
+Function        Remove-NetIPAddress                                1.0.0.0    NetTCPIP
+Function        Remove-NetIPHttpsCertBinding                       1.0.0.0    NetworkTransition
+Function        Remove-NetIPHttpsConfiguration                     1.0.0.0    NetworkTransition
+Function        Remove-NetIPsecDospSetting                         2.0.0.0    NetSecurity
+Function        Remove-NetIPsecMainModeCryptoSet                   2.0.0.0    NetSecurity
+Function        Remove-NetIPsecMainModeRule                        2.0.0.0    NetSecurity
+Function        Remove-NetIPsecMainModeSA                          2.0.0.0    NetSecurity
+Function        Remove-NetIPsecPhase1AuthSet                       2.0.0.0    NetSecurity
+Function        Remove-NetIPsecPhase2AuthSet                       2.0.0.0    NetSecurity
+Function        Remove-NetIPsecQuickModeCryptoSet                  2.0.0.0    NetSecurity
+Function        Remove-NetIPsecQuickModeSA                         2.0.0.0    NetSecurity
+Function        Remove-NetIPsecRule                                2.0.0.0    NetSecurity
+Function        Remove-NetLbfoTeam                                 2.0.0.0    NetLbfo
+Function        Remove-NetLbfoTeamMember                           2.0.0.0    NetLbfo
+Function        Remove-NetLbfoTeamNic                              2.0.0.0    NetLbfo
+Function        Remove-NetNat                                      1.0.0.0    NetNat
+Function        Remove-NetNatExternalAddress                       1.0.0.0    NetNat
+Function        Remove-NetNatStaticMapping                         1.0.0.0    NetNat
+Function        Remove-NetNatTransitionConfiguration               1.0.0.0    NetworkTransition
+Function        Remove-NetNeighbor                                 1.0.0.0    NetTCPIP
+Function        Remove-NetQosPolicy                                2.0.0.0    NetQos
+Function        Remove-NetTransportFilter                          1.0.0.0    NetTCPIP
+Function        Remove-NetworkSwitchEthernetPortIPAddress          1.0.0.0    NetworkSwitchManager
+Function        Remove-NetworkSwitchVlan                           1.0.0.0    NetworkSwitchManager
+Function        Remove-OdbcDsn                                     1.0.0.0    Wdac
+Function        Remove-Partition                                   2.0.0.0    Storage
+Function        Remove-PartitionAccessPath                         2.0.0.0    Storage
+Function        Remove-PhysicalDisk                                2.0.0.0    Storage
+Function        Remove-Printer                                     1.1        PrintManagement
+Function        Remove-PrinterDriver                               1.1        PrintManagement
+Function        Remove-PrinterPort                                 1.1        PrintManagement
+Function        Remove-PrintJob                                    1.1        PrintManagement
+Function        Remove-SmbBandwidthLimit                           2.0.0.0    SmbShare
+Function        Remove-SmbGlobalMapping                            2.0.0.0    SmbShare
+Function        Remove-SmbMapping                                  2.0.0.0    SmbShare
+Function        Remove-SmbMultichannelConstraint                   2.0.0.0    SmbShare
+Function        Remove-SmbShare                                    2.0.0.0    SmbShare
+Function        Remove-StorageBusBinding                           1.0.0.0    StorageBusCache
+Function        Remove-StorageFaultDomain                          2.0.0.0    Storage
+Function        Remove-StorageFileServer                           2.0.0.0    Storage
+Function        Remove-StorageHealthIntent                         2.0.0.0    Storage
+Function        Remove-StorageHealthSetting                        2.0.0.0    Storage
+Function        Remove-StoragePool                                 2.0.0.0    Storage
+Function        Remove-StorageTier                                 2.0.0.0    Storage
+Function        Remove-TargetPortFromMaskingSet                    2.0.0.0    Storage
+Function        Remove-VirtualDisk                                 2.0.0.0    Storage
+Function        Remove-VirtualDiskFromMaskingSet                   2.0.0.0    Storage
+Function        Remove-VpnConnection                               2.0.0.0    VpnClient
+Function        Remove-VpnConnectionRoute                          2.0.0.0    VpnClient
+Function        Remove-VpnConnectionTriggerApplication             2.0.0.0    VpnClient
+Function        Remove-VpnConnectionTriggerDnsConfiguration        2.0.0.0    VpnClient
+Function        Remove-VpnConnectionTriggerTrustedNetwork          2.0.0.0    VpnClient
+Function        Rename-DAEntryPointTableItem                       1.0.0.0    DirectAccessClientComponents
+Function        Rename-MaskingSet                                  2.0.0.0    Storage
+Function        Rename-NetAdapter                                  2.0.0.0    NetAdapter
+Function        Rename-NetFirewallRule                             2.0.0.0    NetSecurity
+Function        Rename-NetIPHttpsConfiguration                     1.0.0.0    NetworkTransition
+Function        Rename-NetIPsecMainModeCryptoSet                   2.0.0.0    NetSecurity
