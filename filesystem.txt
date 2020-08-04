@@ -1,0 +1,85 @@
+Synchronous and Asynchronous file system:
+
+var fs=require("fs");
+//reading a file
+//Asynchronous
+fs.readFile('test.txt',function(err,data){
+    console.log(data.toString());
+});
+//synchronous
+var data=fs.readFileSync('test.txt');
+console.log(data.toString());
+//open file
+fs.open('test.txt','r',function(err,fd){
+    console.log("file opened successfully");
+    //truncating file
+    fs.ftruncate(fd, 10, function(err) {
+        console.log("File truncated successfully.");
+    });
+    //closeing file
+    fs.close(fd, function(err) {
+        console.log("File closed successfully.");
+     });
+});
+//get file information
+fs.stat('test.txt',function(err,stats){
+    console.log(stats);
+    console.log("get file information successfully");
+    console.log(stats.isFile());
+    console.log(stats.isDirectory());
+    console.log(stats.isBlockDevice());
+    console.log(stats.isCharacterDevice());
+    console.log(stats.isSymbolicLink());
+    console.log(stats.isFIFO());
+    console.log(stats.isSocket())
+});
+//writing file
+fs.writeFile('my.txt','this is lavanya',function(err){
+    console.log("data written successfully");
+    fs.readFile('my.txt',function(err,data){
+        console.log(data.toString());
+    });
+});
+fs.unlink('test.txt', function(err) {
+    console.log("File deleted successfully!");
+ });
+
+
+results:
+javascript\node js>node nodejs.js
+hii guys how are you all i hope you are fine.this is lavanya from dxc technology. i inform to all of you complete the daily tracker in time and upload the assignment links in github.
+Stats {
+  dev: 2157756904,
+  mode: 33206,
+  nlink: 1,
+  uid: 0,
+  gid: 0,
+  rdev: 0,
+  blksize: 4096,
+  ino: 3940649674264627,
+  size: 182,
+  blocks: 0,
+  atimeMs: 1596346904700.5012,
+  mtimeMs: 1596346904700.5012,
+  ctimeMs: 1596346904717.3003,
+  birthtimeMs: 1596346794951.1885,
+  atime: 2020-08-02T05:41:44.701Z,
+  mtime: 2020-08-02T05:41:44.701Z,
+  ctime: 2020-08-02T05:41:44.717Z,
+  birthtime: 2020-08-02T05:39:54.951Z
+}
+get file information successfully
+true
+false
+false
+false
+false
+false
+false
+file opened successfully
+File deleted successfully!
+File truncated successfully.
+File closed successfully.
+data written successfully
+hii guys how are you all i hope you are fine.this is lavanya from dxc technology. i inform to all of you complete the daily tracker in time and upload the assignment links in github.
+this is lavanya

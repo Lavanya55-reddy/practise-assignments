@@ -1,0 +1,85 @@
+BUFFERS:
+
+//creating buffer
+var buf=new Buffer(20);
+console.log(buf);
+//creating buffer from an array
+var buf=new Buffer([10,20,30,40,50]);
+console.log(buf);
+//creating buffer from string and encoding types
+var buf=new Buffer("hello this is lavanya","utf8");
+console.log(buf);
+var buf=new Buffer("hello this is lavanya","ascii");
+console.log(buf);
+var buf=new Buffer("hello this is lavanya","utf16le");
+console.log(buf);
+var buf=new Buffer("hello this is lavanya","ucs2");
+console.log(buf);
+var buf=new Buffer("hello this is lavanya", "base64");
+console.log(buf);
+var buf=new Buffer("hello this is lavanya", "hex");
+console.log(buf);
+//writing to buffers
+buf=new Buffer(256);
+len=buf.write("this is lavanya from dxc technology!!!");
+console.log(len);
+console.log("good morning "+buf);
+//reading from buffers
+buf=new Buffer(26);
+var i=0;
+while(i<26){
+    buf[i]=i+65;
+    i++;
+}
+console.log(buf.toString('ascii'));
+//concatenate buffers
+buf1=new Buffer("i love coding");
+buf2=new Buffer("it is easy to learn");
+buf3=Buffer.concat([buf1,buf2]);
+console.log(buf3.toString());
+//compare buffers
+buffer1 = new Buffer('abcde');
+buffer2 = new Buffer('abcde');
+result = buffer1.compare(buffer2);
+
+if(result < 0) {
+   console.log(buffer1 +" comes before " + buffer2);
+} else if(result === 0) {
+   console.log(buffer1 +" is same as " + buffer2);
+} else {
+   console.log(buffer1 +" comes after " + buffer2);
+}
+//copy buffers
+buf1=new Buffer("hello everyone");
+buf2=new Buffer(25);
+buf1.copy(buf2);
+console.log(buf2.toString());
+//slice buffer
+buf1=new Buffer("good night guys");
+buf2=buf1.slice(2,8);
+console.log(buf2.toString());
+//buffer length
+buf1=new Buffer("good night guys,sweet dreams!!!");
+console.log(buf1.length);
+
+results:
+
+
+javascript\nodefile>node bufferexample.js
+<Buffer 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00>
+<Buffer 0a 14 1e 28 32>
+<Buffer 68 65 6c 6c 6f 20 74 68 69 73 20 69 73 20 6c 61 76 61 6e 79 61>
+<Buffer 68 65 6c 6c 6f 20 74 68 69 73 20 69 73 20 6c 61 76 61 6e 79 61>
+<Buffer 68 00 65 00 6c 00 6c 00 6f 00 20 00 74 00 68 00 69 00 73 00 20 00 69 00 73 00 20 00 6c 00 61 00 76 00 61 00 6e 00 79 00 61 00>
+<Buffer 68 00 65 00 6c 00 6c 00 6f 00 20 00 74 00 68 00 69 00 73 00 20 00 69 00 73 00 20 00 6c 00 61 00 76 00 61 00 6e 00 79 00 61 00>
+<Buffer 85 e9 65 a2 d8 62 b2 2b 25 6a f6 a7 c9>
+<Buffer >
+38
+good morning this is lavanya from dxc technology!!!
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+i love codingit is easy to learn
+abcde is same as abcde
+hello everyone
+od nig
+31
+(node:984) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
