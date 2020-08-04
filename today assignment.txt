@@ -1,0 +1,133 @@
+javascript assignment:
+
+html:
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            javascript programming
+        </title>
+        <p id="demo"></p>
+        <p id="f1"></p>
+        <p id="f2"></p>
+        <p id="f3"></p>
+        <p id="v"></p>
+        <p id="l1"></p>
+        <p id="l2"></p>
+        <p id="c"></p>
+        <p id="a"></p>
+    <body>
+        <h1>lavanya</h1>
+         <script src="variables.js">
+
+         </script>
+         <script src="datatypes.js"></script>
+         <script src="arrays.js"></script>
+         <script src="object.js"></script>
+         <script src="functions.js"></script>
+         <script src="conditinal.js"></script>
+         <script src="loop.js"></script>
+         <script src="switch.js"></script>
+    </body>
+</html>
+
+
+variables:
+let a=100;
+let b=200;
+document.getElementById("v").innerHTML=a+b;
+
+o/p:300
+
+datatypes:
+let name="lavanya";
+let z=10;
+document.getElementById("f1").innerHTML=typeof(name);
+
+o/p:string
+
+arrays:
+
+let party=[];
+party=["cake","dress","gifts","toys",1000];
+document.getElementById("a").innerHTML=party[0]+" "+party[1]+" "+party[2]+" "+party[3];
+
+o/p:cake dress gifts toys
+
+objects:
+
+let book={
+    paper:'a4',
+    color:'white',
+    price:100
+};
+document.getElementById("f3").innerHTML=book.color;
+
+o/p:white
+
+//functions
+
+function number(num){
+    document.getElementById("f2").innerHTML="number is "+num;
+}
+number(10);
+
+o/p:number is 10
+
+conditional:
+
+let r=[];
+r=[1,2,1,3,5,7];
+if(r[0]==r[1]){
+    document.getElementById("c").innerHTML="if";
+}else if(r[0]==r[2]){
+    document.getElementById("c").innerHTML="else if";
+}else{
+    document.getElementById("c").innerHTML="else";
+}
+
+o/p:else if
+
+lopps:
+
+let m=0;
+do{
+    document.getElementById("l1").innerHTML="hello";
+    m=m+1;
+}while(m<5);
+
+
+
+for(var l=0;l<5;l++){
+    document.getElementById("l2").innerHTML="hi";
+}
+ o/p:
+hello
+hello
+hello
+hello
+hello
+
+hi
+hi
+hi
+hi
+hi
+
+switch:
+let laptop="hp";
+switch(laptop){
+    case "dell":
+        document.getElementById("demo").innerHTML="dell";
+        break;
+    case "hp":
+        document.getElementById("demo").innerHTML="hp";
+        break;
+    case "lenovo":
+        document.getElementById("demo").innerHTML="lenovo";
+        break;
+    default:
+        document.getElementById("demp").innerHTML="not found";
+}
+
+o/p:hp
